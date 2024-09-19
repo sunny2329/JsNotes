@@ -182,3 +182,39 @@ obj = {
 
 //! THIS
 
+// the value of this is evaluated during the run-time depending on the context
+
+// in non strict mode the value of this in such case wil be the global object , this is a historial behavior that use strict fixes
+
+// in js this is free
+
+
+// arrow functions have no this
+
+// it is taken from the outer normal function
+
+
+//useful when we need to take it from the outer context
+
+
+
+//! ==========PART 4 DONE ================
+
+
+
+//Constructor functions technically are regular functions there are two conventions 
+// they are named with capital letter first
+// they should be executed only with new operator
+
+// when we use new keyword, it creates a new empty object and sets the prototype property of the new object to the prototype property of the constructor function
+
+// we can not use ?. for writing
+
+
+// As user objects belong to another codebase, it’s unsafe to add fields to them, since we might affect pre-defined behavior in that other codebase. However, symbols cannot be accessed accidentally. The third-party code won’t be aware of newly defined symbols, so it’s safe to add symbols to the user objects.
+
+
+// symbols are skipped by for...in
+//Object.keys(user) also igonores them
+
+
