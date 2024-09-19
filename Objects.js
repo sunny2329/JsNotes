@@ -91,4 +91,59 @@ function objSum (obj){
 
 //! ====================== PART 1 DONE =====================
 
+//! Object references and copying
+
+//objects are stored and copied "by reference" whereas primitive values : strings, numbers, booleans are always copied as a whole value
+
+
+user = {
+    name: "John",
+    age: 30
+}
+
+let admin = user;
+
+admin.age = 31;
+
+console.log(user.age); // 31
+
+
+// two objects are equal only if they are the same object
+
+let a = {};
+let b = {};
+let c= a
+
+console.log(a === b); // false
+
+console.log(a === c); // true
+
+//Object.assign(dest,...sources);
+
+// the first argument dest is a target object
+//if the copied property name already exists it gets overwritten
+
+//! Nested Cloning
+
+obj = {
+    name: "John",
+    age: 30,
+    address: {
+        street: "123 Main St",
+        city: "New York"
+    }
+
+    
+};
+
+// there's structuredClone method that implements deep cloning
+
+// the call structuredClone(object) clones the object with all nested properties
+
+//function properties aren't supported 
+
+
+// to handle such complex cases we may need to use a combination of cloning methods, write custom code
+
+// for instance _.cloneDeep(obj) from the JS library lodash
 
