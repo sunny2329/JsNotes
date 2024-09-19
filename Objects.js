@@ -54,8 +54,8 @@ let obj = {
 
 
 user = {
-    name:'Sobhit',
-    age:30
+    name: 'Sobhit',
+    age: 30
 }
 
 console.log("name" in user);//true
@@ -63,16 +63,16 @@ console.log("name" in user);//true
 
 obj = {
     test: undefined
-  };
-  
+};
+
 //   alert( obj.test ); // it's undefined, so - no such property?
-  
+
 //   alert( "test" in obj ); // true, the property does exist!
 
 //! Write the function isEmpty(obj) which returns true if the object has no properties false otherwise
 
-function isEmpty(obj){
-    for(let prop in obj){
+function isEmpty(obj) {
+    for (let prop in obj) {
         return false;
     }
     return true;
@@ -80,9 +80,9 @@ function isEmpty(obj){
 
 //! Sum object properties 
 
-function objSum (obj){
+function objSum(obj) {
     let sum = 0;
-    for(let prop in obj){
+    for (let prop in obj) {
         sum += obj[prop]
     }
     return sum;
@@ -112,7 +112,7 @@ console.log(user.age); // 31
 
 let a = {};
 let b = {};
-let c= a
+let c = a
 
 console.log(a === b); // false
 
@@ -133,17 +133,52 @@ obj = {
         city: "New York"
     }
 
-    
+
 };
 
 // there's structuredClone method that implements deep cloning
 
 // the call structuredClone(object) clones the object with all nested properties
 
-//function properties aren't supported 
+//function properties aren't supported
 
 
 // to handle such complex cases we may need to use a combination of cloning methods, write custom code
 
 // for instance _.cloneDeep(obj) from the JS library lodash
+
+
+
+//! ============== PART2 DONE ==================
+
+
+//! Garbage Collection
+
+// main concept of memory management in JS is reachability
+
+//1. There'a a base set of reachable values, that cannot be deleted for obvious reasons
+// currently executing function, its local variables and parameteres, global variables
+// these values are called roots
+
+// if there’s an object in a global variable, and that object has a property referencing another object, that object is considered reachable. And those that it references are also reachable. Detailed examples to follow.
+
+
+// There’s a background process in the JavaScript engine that is called garbage collector. It monitors all objects and removes those that have become unreachable.
+
+
+// the basic garbage collection algorithm is called 'mark-and-sweep'
+
+//! Steps
+//1. garbage collector takes roots and "marks" them.
+//2. then it visits and marks all references from them
+//3. then it visits marked objects and markts their references 
+//4. and so on until every reacahable references are visited
+//5. all objects except marked ones are removed
+
+
+
+//! ===================== PART 3 DONE =========================
+
+
+//! THIS
 
