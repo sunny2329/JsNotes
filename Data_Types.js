@@ -50,3 +50,7 @@
 
 //str.localeCompare(str2) return - if str < str2 ,+ str > str2 and 0 if they are equal
 
+
+
+//! Arrays
+
